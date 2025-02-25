@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Counter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Pixel Counter</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Загрузить</button>
+
+    <div>
+        <label><input type="checkbox" id="grayscale"> Grayscale</label>
+        <label><input type="checkbox" id="invert"> Invert Colors</label>
+    </div>
+
+    <div>
+        <label>Threshold: <input type="range" id="threshold" min="1" max="255" value="127"></label>
+        <label>Width: <input type="range" id="width" min="1" max="200" value="1"></label>
+        <label>Height: <input type="range" id="height" min="1" max="200" value="1"></label>
+        <label>Brush Size: <input type="range" id="brushSize" min="1" max="20" value="1"></label>
+    </div>
+
+    <div>
+        <button onclick="moveRectangle(0, -5)">Up</button>
+        <button onclick="moveRectangle(0, 5)">Down</button>
+        <button onclick="moveRectangle(-5, 0)">Left</button>
+        <button onclick="moveRectangle(5, 0)">Right</button>
+    </div>
+
+    <p id="result">Enclosed Pixels: </p>
+    <img id="processedImage" src="" alt="Processed Image" style="max-width: 100%;">
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
